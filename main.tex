@@ -1,0 +1,87 @@
+\documentclass[12pt, a4paper, twoside]{book}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=4cm,bottom=3cm,left=4cm,right=3cm]{geometry}
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{paralist}
+\usepackage{amsmath,amssymb}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{tikz,pgfplots}
+\usepackage{multicol,multirow}
+\usepackage{asymptote}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{gensymb}
+\usepackage{nicefrac}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\usetikzlibrary{patterns}
+
+\newcommand{\dx}{\text{ d}x}
+\newcommand{\dy}{\text{ d}y}
+\newcommand{\ddv}{\text{ d}v}
+\newcommand{\du}{\text{ d}u}
+
+\renewcommand{\chaptername}{Bagian}
+
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyhead[LE,RO]{\sffamily \thepage\ / \pageref{LastPage}}
+	\renewcommand{\headrulewidth}{2pt}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\slshape \sffamily\rightmark}
+\fancyhead[RE]{\slshape \sffamily\leftmark}
+\fancyhead[LE,RO]{\sffamily \thepage\ / \pageref{LastPage}}
+\renewcommand{\headrulewidth}{2pt}
+
+\titleformat{\chapter}[display]
+    {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{10pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{0pt}{40pt}
+
+\renewcommand{\contentsname}{\hfill Daftar Isi\hfill}
+
+\onehalfspacing
+\begin{document}
+\frontmatter
+
+\clearpage
+{
+	\pagestyle{empty}
+	\fancypagestyle{plain}
+	{
+		\fancyhf{}
+		\fancyfoot[C]{\sffamily\thepage}
+		\renewcommand{\headrulewidth}{2pt}
+	}
+	\tableofcontents
+	\clearpage
+	\begingroup
+		\pagestyle{empty}%
+		\begin{center}{\sffamily\bf\footnotesize \emph{HALAMAN INI SENGAJA DIKOSONGKAN}}\end{center}
+		\cleardoublepage
+	\endgroup
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+\input{soal/soalmandiri-astramatika24}
+
+\input{soal/soalkelompok-astramatika24}
+\clearpage
+	\begingroup
+		\pagestyle{empty}%
+		\begin{center}{\sffamily\bf\footnotesize \emph{HALAMAN INI SENGAJA DIKOSONGKAN}}\end{center}
+		\cleardoublepage
+	\endgroup
+\input{pembahasan/pembahasan-mandiriastramatika24}
+
+\end{document}
